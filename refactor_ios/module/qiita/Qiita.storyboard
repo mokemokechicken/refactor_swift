@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Byl-pc-lIT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -28,31 +29,179 @@
                         <viewControllerLayoutGuide type="top" id="pVY-GJ-jbg"/>
                         <viewControllerLayoutGuide type="bottom" id="HmG-ug-K8Q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="awZ-2e-UtN" customClass="ScalableView" customModule="refactor_ios" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="awZ-2e-UtN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tko-FD-vLX">
-                                <rect key="frame" x="157" y="130" width="60" height="30"/>
-                                <state key="normal" title="最新記事">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDp-mu-MIs">
-                                <rect key="frame" x="145" y="215" width="85" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDp-mu-MIs">
+                                <rect key="frame" x="96" y="190" width="183" height="30"/>
                                 <state key="normal" title="iOS関連記事">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="80" y="146" width="160" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="taG-kf-2PR" kind="show" id="7Yx-W5-AgG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tko-FD-vLX">
+                                <rect key="frame" x="96" y="100" width="183" height="28"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="最新記事">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="9qf-2K-mmW" kind="show" id="WxQ-nL-T70"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tko-FD-vLX" firstAttribute="top" secondItem="pVY-GJ-jbg" secondAttribute="bottom" constant="36" id="7bm-DP-lCh"/>
+                            <constraint firstAttribute="centerX" secondItem="Tko-FD-vLX" secondAttribute="centerX" id="9tR-Dv-h1k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tko-FD-vLX" secondAttribute="trailing" constant="80" id="FpS-RD-4Bw"/>
+                            <constraint firstItem="Tko-FD-vLX" firstAttribute="leading" secondItem="awZ-2e-UtN" secondAttribute="leadingMargin" constant="80" id="hRn-ZN-2wH"/>
+                            <constraint firstAttribute="centerX" secondItem="tDp-mu-MIs" secondAttribute="centerX" id="j0z-Rf-von"/>
+                            <constraint firstItem="tDp-mu-MIs" firstAttribute="top" secondItem="Tko-FD-vLX" secondAttribute="bottom" constant="62" id="jd2-ig-Sjd"/>
+                            <constraint firstItem="tDp-mu-MIs" firstAttribute="leading" secondItem="awZ-2e-UtN" secondAttribute="leadingMargin" constant="80" id="mhH-Ay-S89"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="TIg-9z-fhL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZD-Nb-27G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="332"/>
+            <point key="canvasLocation" x="388" y="355"/>
+        </scene>
+        <!--最新記事-->
+        <scene sceneID="Sj9-PT-Psn">
+            <objects>
+                <viewController title="最新記事" id="9qf-2K-mmW" customClass="LatestItemListViewController" customModule="refactor_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X0e-GO-awO"/>
+                        <viewControllerLayoutGuide type="bottom" id="uSf-gH-7qQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wb6-Je-ZHh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AH5-ax-ZFC">
+                                <rect key="frame" x="16" y="69" width="343" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AH5-ax-ZFC" firstAttribute="top" secondItem="X0e-GO-awO" secondAttribute="bottom" constant="5" id="9L2-8M-XTu"/>
+                            <constraint firstAttribute="centerX" secondItem="AH5-ax-ZFC" secondAttribute="centerX" id="A2C-C9-rNv"/>
+                            <constraint firstAttribute="centerY" secondItem="AH5-ax-ZFC" secondAttribute="centerY" id="VGS-Zw-XTp"/>
+                            <constraint firstItem="AH5-ax-ZFC" firstAttribute="leading" secondItem="wb6-Je-ZHh" secondAttribute="leadingMargin" id="mcg-uX-SW7"/>
+                            <constraint firstItem="uSf-gH-7qQ" firstAttribute="top" secondItem="AH5-ax-ZFC" secondAttribute="bottom" constant="5" id="wRs-t4-o6P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AH5-ax-ZFC" secondAttribute="trailing" id="wpb-I9-DtR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VGS-Zw-XTp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="AH5-ax-ZFC" id="xbE-Ru-yej"/>
+                        <segue destination="Eea-hO-qd3" kind="show" id="uWA-xn-fJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0Y-6S-aoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.5" y="17.5"/>
+        </scene>
+        <!--Item Detail View Controller-->
+        <scene sceneID="XFU-oQ-jxY">
+            <objects>
+                <viewController id="Eea-hO-qd3" customClass="ItemDetailViewController" customModule="refactor_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTb-PP-qgb"/>
+                        <viewControllerLayoutGuide type="bottom" id="soZ-Sj-MYm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4bv-W3-xDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zd3-OO-ge7">
+                                <rect key="frame" x="17" y="69" width="341" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="soZ-Sj-MYm" firstAttribute="top" secondItem="Zd3-OO-ge7" secondAttribute="bottom" constant="5" id="9J5-3V-1aE"/>
+                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="leading" secondItem="4bv-W3-xDb" secondAttribute="leadingMargin" constant="1" id="UtM-cp-Vcq"/>
+                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="top" secondItem="MTb-PP-qgb" secondAttribute="bottom" constant="5" id="hOg-FT-5Og"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zd3-OO-ge7" secondAttribute="trailing" constant="1" id="veK-vl-Pyd"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="Zd3-OO-ge7" id="8W1-Vx-0Cd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bc8-C2-0ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509.5" y="149.5"/>
+        </scene>
+        <!--iOS関連記事-->
+        <scene sceneID="3tl-m3-OXa">
+            <objects>
+                <viewController title="iOS関連記事" id="taG-kf-2PR" customClass="TagItemListViewController" customModule="refactor_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AgU-c1-bB6"/>
+                        <viewControllerLayoutGuide type="bottom" id="G5c-TT-adI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OXV-0A-iKb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-hS-JUk">
+                                <rect key="frame" x="16" y="69" width="343" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G5c-TT-adI" firstAttribute="top" secondItem="rWO-hS-JUk" secondAttribute="bottom" constant="5" id="8Vh-OJ-cxS"/>
+                            <constraint firstItem="rWO-hS-JUk" firstAttribute="top" secondItem="AgU-c1-bB6" secondAttribute="bottom" constant="5" id="Ag7-7y-6CM"/>
+                            <constraint firstItem="rWO-hS-JUk" firstAttribute="trailing" secondItem="OXV-0A-iKb" secondAttribute="trailingMargin" id="c1P-SQ-mD2"/>
+                            <constraint firstItem="rWO-hS-JUk" firstAttribute="leading" secondItem="OXV-0A-iKb" secondAttribute="leadingMargin" id="o1Y-9R-Jl2"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Eea-hO-qd3" kind="show" id="grv-MF-TOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwi-De-Jnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003.5" y="796.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="grv-MF-TOR"/>
+    </inferredMetricsTieBreakers>
 </document>

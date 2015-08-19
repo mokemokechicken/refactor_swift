@@ -1,5 +1,5 @@
 //
-//  ScalableView.swift
+//  TagViewController.swift
 //  refactor_ios
 //
 //  Created by 森下 健 on 2015/08/19.
@@ -8,9 +8,6 @@
 
 import UIKit
 
-class ScalableView: UIView {
-    func a() {
-    }
-    
+class TagItemListViewController: UIViewController {
 
 }

@@ -12,8 +12,11 @@
 		0979B1B71B841CD1007BE50C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0979B1B61B841CD1007BE50C /* Images.xcassets */; };
 		0979B1BA1B841CD1007BE50C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0979B1B81B841CD1007BE50C /* LaunchScreen.xib */; };
 		0979B1C61B841CD2007BE50C /* refactor_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1C51B841CD2007BE50C /* refactor_iosTests.swift */; };
-		0979B1D01B841E38007BE50C /* module in Resources */ = {isa = PBXBuildFile; fileRef = 0979B1CF1B841E38007BE50C /* module */; };
-		0979B1D21B841E40007BE50C /* base in Resources */ = {isa = PBXBuildFile; fileRef = 0979B1D11B841E40007BE50C /* base */; };
+		0979B1D81B841F63007BE50C /* QiitaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1D71B841F63007BE50C /* QiitaModule.swift */; };
+		0979B1DB1B841FFA007BE50C /* Qiita.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0979B1DA1B841FFA007BE50C /* Qiita.storyboard */; };
+		0979B1DE1B842346007BE50C /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1DD1B842346007BE50C /* TransitionManager.swift */; };
+		0979B1E01B842449007BE50C /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1DF1B842449007BE50C /* Module.swift */; };
+		0979B1E21B842C89007BE50C /* ScalableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1E11B842C89007BE50C /* ScalableView.swift */; };
 		5A0AC5636D16A673BD15F398 /* Pods_refactor_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD78E17DB761A25713C6E083 /* Pods_refactor_ios.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -37,8 +40,11 @@
 		0979B1BF1B841CD2007BE50C /* refactor_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = refactor_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0979B1C41B841CD2007BE50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0979B1C51B841CD2007BE50C /* refactor_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refactor_iosTests.swift; sourceTree = "<group>"; };
-		0979B1CF1B841E38007BE50C /* module */ = {isa = PBXFileReference; lastKnownFileType = folder; path = module; sourceTree = "<group>"; };
-		0979B1D11B841E40007BE50C /* base */ = {isa = PBXFileReference; lastKnownFileType = folder; path = base; sourceTree = "<group>"; };
+		0979B1D71B841F63007BE50C /* QiitaModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaModule.swift; sourceTree = "<group>"; };
+		0979B1DA1B841FFA007BE50C /* Qiita.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Qiita.storyboard; sourceTree = "<group>"; };
+		0979B1DD1B842346007BE50C /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		0979B1DF1B842449007BE50C /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		0979B1E11B842C89007BE50C /* ScalableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalableView.swift; sourceTree = "<group>"; };
 		5D05B59AAACAFBAEA752CD9D /* Pods-refactor_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refactor_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refactor_ios/Pods-refactor_ios.release.xcconfig"; sourceTree = "<group>"; };
 		88A917045D9A698D4ADE7F45 /* Pods-refactor_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refactor_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refactor_ios/Pods-refactor_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		CD78E17DB761A25713C6E083 /* Pods_refactor_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refactor_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +92,8 @@
 		0979B1AC1B841CD1007BE50C /* refactor_ios */ = {
 			isa = PBXGroup;
 			children = (
-				0979B1D11B841E40007BE50C /* base */,
-				0979B1CF1B841E38007BE50C /* module */,
+				0979B1DC1B84231A007BE50C /* base */,
+				0979B1D31B841F3F007BE50C /* module */,
 				0979B1AF1B841CD1007BE50C /* AppDelegate.swift */,
 				0979B1B31B841CD1007BE50C /* Main.storyboard */,
 				0979B1B61B841CD1007BE50C /* Images.xcassets */,
@@ -120,6 +126,41 @@
 				0979B1C41B841CD2007BE50C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0979B1D31B841F3F007BE50C /* module */ = {
+			isa = PBXGroup;
+			children = (
+				0979B1D41B841F3F007BE50C /* qiita */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		0979B1D41B841F3F007BE50C /* qiita */ = {
+			isa = PBXGroup;
+			children = (
+				0979B1D91B841FD4007BE50C /* presentation */,
+				0979B1D71B841F63007BE50C /* QiitaModule.swift */,
+			);
+			path = qiita;
+			sourceTree = "<group>";
+		};
+		0979B1D91B841FD4007BE50C /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0979B1DA1B841FFA007BE50C /* Qiita.storyboard */,
+				0979B1E11B842C89007BE50C /* ScalableView.swift */,
+			);
+			name = presentation;
+			sourceTree = "<group>";
+		};
+		0979B1DC1B84231A007BE50C /* base */ = {
+			isa = PBXGroup;
+			children = (
+				0979B1DD1B842346007BE50C /* TransitionManager.swift */,
+				0979B1DF1B842449007BE50C /* Module.swift */,
+			);
+			path = base;
 			sourceTree = "<group>";
 		};
 		7DD6CFDB84EC8BBE43001761 /* Pods */ = {
@@ -222,11 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0979B1D01B841E38007BE50C /* module in Resources */,
-				0979B1D21B841E40007BE50C /* base in Resources */,
 				0979B1B51B841CD1007BE50C /* Main.storyboard in Resources */,
 				0979B1BA1B841CD1007BE50C /* LaunchScreen.xib in Resources */,
 				0979B1B71B841CD1007BE50C /* Images.xcassets in Resources */,
+				0979B1DB1B841FFA007BE50C /* Qiita.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0979B1DE1B842346007BE50C /* TransitionManager.swift in Sources */,
 				0979B1B01B841CD1007BE50C /* AppDelegate.swift in Sources */,
+				0979B1E01B842449007BE50C /* Module.swift in Sources */,
+				0979B1D81B841F63007BE50C /* QiitaModule.swift in Sources */,
+				0979B1E21B842C89007BE50C /* ScalableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var transitionManager: TransitionManager!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        transitionManager = TransitionManager(app: self)
+        
+        // 必要なら moduleManager.add(QiitaModule().onLoad()) みたいにする
+        let qiitaModule = QiitaModule()
+        qiitaModule.onLoad()
+        transitionManager.setToRoot(qiitaModule)
         return true
     }
 

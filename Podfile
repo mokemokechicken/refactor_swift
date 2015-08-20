@@ -4,7 +4,8 @@ use_frameworks!
 
 target 'refactor_ios' do
   pod 'Alamofire', '~> 1.3'
-  pod 'SwiftyJSON', '~> 2.2.1'
+  pod 'ImageLoader', '~> 0.3.4'
+  pod 'Argo', '~> 1.0.4'
 end
 
 target 'refactor_iosTests' do

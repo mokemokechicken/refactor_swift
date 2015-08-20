@@ -6,6 +6,7 @@ target 'refactor_ios' do
   pod 'Alamofire', '~> 1.3'
   pod 'ImageLoader', '~> 0.3.4'
   pod 'Argo', '~> 1.0.4'
+  pod 'SwiftTask', '~> 3.3.1'
 end
 
 target 'refactor_iosTests' do

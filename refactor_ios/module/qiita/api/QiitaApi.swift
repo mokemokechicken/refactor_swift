@@ -10,8 +10,8 @@ import Argo
 import Runes
 
 protocol QiitaApi {
-    func getLatestItems() -> [AnyObject]
-    func getItemsByTag(tag: String) -> [AnyObject]
+    func getLatestItems() -> [QiitaItem]
+    func getItemsByTag(tag: String) -> [QiitaItem]
 }
 
 extension QiitaItem: Decodable {
@@ -38,7 +38,7 @@ extension QiitaUser: Decodable {
         return QiitaUser.create
             <^> json <| "id"
             <*> json <| "name"
-            <*> json <| "profileImageUrl"
+            <*> json <| "profile_image_url"
     }
 }
 

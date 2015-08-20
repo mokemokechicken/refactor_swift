@@ -15,8 +15,3 @@ class QiitaItemCell: UITableViewCell {
     
 }
 
-protocol QiitaItemCellEntity {
-    var iconUrl: String {get}
-    var title: String {get}
-}
-

@@ -18,23 +18,35 @@ class LatestItemListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = QiitaItemListViewDataSource(data: [])
+        dataSource = QiitaItemListViewDataSource(data: [], tableView: tableView)
         tableView.dataSource = dataSource
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        let api = QiitaApiImpl(baseUrl: "https://qiita.com")
+        api.getLatestItems().success { [unowned self] itemList in
+            self.dataSource.replaceData(itemList)
+        }
+        
     }
     
 }
 
 class QiitaItemListViewDataSource: NSObject, UITableViewDataSource {
 
-    let data: [QiitaItemCellEntity]
+    private var data: [QiitaItem]
+    private let tableView: UITableView
 
-    init(data: [QiitaItemCellEntity]) {
+    init(data: [QiitaItem], tableView: UITableView) {
         self.data = data
+        self.tableView = tableView
         super.init()
+    }
+    
+    func replaceData(itemList: [QiitaItem]) {
+        self.data = itemList
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +59,7 @@ class QiitaItemListViewDataSource: NSObject, UITableViewDataSource {
         cell.titleView.text = item.title
         
         // この実装も高速スクロールしたときの課題が残っている
-        cell.imageView?.load(item.iconUrl, placeholder: nil) { _ in
+        cell.imageView?.load(item.user.profileImageUrl, placeholder: nil) { _ in
             cell.setNeedsLayout()
         }
         return cell

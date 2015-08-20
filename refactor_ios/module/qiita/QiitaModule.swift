@@ -12,16 +12,10 @@ import SwiftTask
 class QiitaModule : Module{
     func onLoad() {
         let api = QiitaApiImpl(baseUrl: "https://qiita.com")
-        let task = api.aa().success { (itemList: [QiitaItem]) -> Void in
+        api.getLatestItems().success {itemList in
             println(itemList)
         }
         
-        
-            
-//            .success { (itemList: [QiitaItem]) -> Void in
-//            println(itemList)
-//            return 
-//        }
     }
  
     func firstViewController() -> UIViewController? {

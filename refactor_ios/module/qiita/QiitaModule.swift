@@ -12,7 +12,10 @@ import SwiftTask
 class QiitaModule : Module{
     func onLoad() {
         let api = QiitaApiImpl(baseUrl: "https://qiita.com")
-        let task = api.aa()
+        let task = api.aa().success { (itemList: [QiitaItem]) -> Void in
+            println(itemList)
+        }
+        
         
             
 //            .success { (itemList: [QiitaItem]) -> Void in

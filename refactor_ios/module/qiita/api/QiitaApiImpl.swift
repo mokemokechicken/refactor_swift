@@ -33,36 +33,35 @@ class QiitaApiImpl : QiitaApi {
         return []
     }
     
-    func aa() -> Task<Progress, [QiitaItem], NSError> {
-        let task = Task<Progress, [QiitaItem], NSError> { progress, fulfill, reject, configure in
-            Alamofire.request(.GET, "\(baseUrl)/api/v2/items")
-                .response { _, response, data, error in
+    func aa<T: Decodable where T == T.DecodedType>() -> Task<Progress, [T], NSError> {
+        let task = Task<Progress, [T], NSError> { progress, fulfill, reject, configure in
+            Alamofire.request(.GET, "\(self.baseUrl)/api/v2/items")
+                .response { request, response, data, error in
                     if let err = error {
                         reject(err)
-                    } else {
-                        if let responseData = data {
-                            var jsonError: NSError?
-                            let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: &jsonError)
-                            if let err = jsonError {
-                                reject(err)
-                            } else if let j: AnyObject = json {
-                                let decoded: Decoded<[QiitaItem]> = decode(j)
-                                switch(decoded) {
-                                case .MissingKey(let s):
-                                    reject(NSError())
-                                case .Success(let box):
-                                    fulfill(box.value)
-                                case .TypeMismatch(let s):
-                                    reject(NSError())
-                                }
-                            } else {
-                                reject(NSError())
+                        return
+                    }
+                    if let responseData = data {
+                        var jsonError: NSError?
+                        let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: &jsonError)
+                        if let j: AnyObject = json {
+                            let decoded: Decoded<[T]> = decode(j)
+                            switch(decoded) {
+                            case .Success(let box):
+                                fulfill(box.value)
+                            case .MissingKey(let s):
+                                reject(NSError(domain: s, code: 0, userInfo: nil))
+                            case .TypeMismatch(let s):
+                                reject(NSError(domain: s, code: 0, userInfo: nil))
                             }
                         } else {
-                            reject(NSError())
+                            reject(jsonError!)
                         }
+                    } else {
+                        reject(NSError(domain: "API Response Error: No Data", code: -1, userInfo: nil))
                     }
             }
+            return
         }
         return task
     }

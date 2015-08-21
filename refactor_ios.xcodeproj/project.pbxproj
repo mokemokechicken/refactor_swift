@@ -23,6 +23,8 @@
 		0979B1FA1B856B7F007BE50C /* QiitaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1F91B856B7F007BE50C /* QiitaApi.swift */; };
 		0979B1FD1B856F0F007BE50C /* QiitaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1FC1B856F0F007BE50C /* QiitaEntity.swift */; };
 		0979B1FF1B857D7F007BE50C /* QiitaApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B1FE1B857D7F007BE50C /* QiitaApiImpl.swift */; };
+		0979B2011B85D128007BE50C /* QiitaItemListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B2001B85D128007BE50C /* QiitaItemListViewDataSource.swift */; };
+		0979B2031B85D191007BE50C /* ModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979B2021B85D191007BE50C /* ModelContainer.swift */; };
 		5A0AC5636D16A673BD15F398 /* Pods_refactor_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD78E17DB761A25713C6E083 /* Pods_refactor_ios.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		0979B1F91B856B7F007BE50C /* QiitaApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaApi.swift; sourceTree = "<group>"; };
 		0979B1FC1B856F0F007BE50C /* QiitaEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaEntity.swift; sourceTree = "<group>"; };
 		0979B1FE1B857D7F007BE50C /* QiitaApiImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaApiImpl.swift; sourceTree = "<group>"; };
+		0979B2001B85D128007BE50C /* QiitaItemListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaItemListViewDataSource.swift; sourceTree = "<group>"; };
+		0979B2021B85D191007BE50C /* ModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainer.swift; sourceTree = "<group>"; };
 		5D05B59AAACAFBAEA752CD9D /* Pods-refactor_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refactor_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refactor_ios/Pods-refactor_ios.release.xcconfig"; sourceTree = "<group>"; };
 		88A917045D9A698D4ADE7F45 /* Pods-refactor_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refactor_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refactor_ios/Pods-refactor_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		CD78E17DB761A25713C6E083 /* Pods_refactor_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refactor_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,7 @@
 			children = (
 				0979B1DD1B842346007BE50C /* TransitionManager.swift */,
 				0979B1DF1B842449007BE50C /* Module.swift */,
+				0979B2021B85D191007BE50C /* ModelContainer.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				0979B1F01B8554A5007BE50C /* TagItemListViewController.swift */,
 				0979B1F61B8557DE007BE50C /* QiitaItemCell.swift */,
 				0979B1EE1B8554A5007BE50C /* ItemDetailViewController.swift */,
+				0979B2001B85D128007BE50C /* QiitaItemListViewDataSource.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -371,8 +377,10 @@
 				0979B1FF1B857D7F007BE50C /* QiitaApiImpl.swift in Sources */,
 				0979B1F11B8554A5007BE50C /* ItemDetailViewController.swift in Sources */,
 				0979B1FD1B856F0F007BE50C /* QiitaEntity.swift in Sources */,
+				0979B2031B85D191007BE50C /* ModelContainer.swift in Sources */,
 				0979B1FA1B856B7F007BE50C /* QiitaApi.swift in Sources */,
 				0979B1B01B841CD1007BE50C /* AppDelegate.swift in Sources */,
+				0979B2011B85D128007BE50C /* QiitaItemListViewDataSource.swift in Sources */,
 				0979B1E01B842449007BE50C /* Module.swift in Sources */,
 				0979B1F71B8557DE007BE50C /* QiitaItemCell.swift in Sources */,
 				0979B1D81B841F63007BE50C /* QiitaModule.swift in Sources */,

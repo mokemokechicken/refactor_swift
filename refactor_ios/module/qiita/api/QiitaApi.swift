@@ -16,8 +16,6 @@ protocol QiitaApi {
     func getItemsByTag(tag: String) -> Task<Float, [QiitaItem], NSError>
 }
 
-
-
 // Argo: https://github.com/thoughtbot/Argo
 // 日本語の説明: http://qiita.com/koher/items/300d89136b515291dac4
 extension QiitaItem: Decodable {

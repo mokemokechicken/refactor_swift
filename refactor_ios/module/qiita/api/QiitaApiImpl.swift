@@ -45,7 +45,9 @@ extension Request {
                         let decoded: Decoded<[T]> = decode(j)  // この辺が Argo
                         switch(decoded) {
                         case .Success(let box):
-                            fulfill(box.value)
+//                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                              fulfill(box.value)
+//                          }
                         case .MissingKey(let s):
                             reject(NSError(domain: s, code: 0, userInfo: nil))
                         case .TypeMismatch(let s):

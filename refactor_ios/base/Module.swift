@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Module {
+public protocol Module {
     func onLoad()
     func firstViewController() -> UIViewController?
 }

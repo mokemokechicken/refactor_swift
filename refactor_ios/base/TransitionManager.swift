@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransitionManager {
+public class TransitionManager {
     private let appDelegate : UIApplicationDelegate
     
     init(app: UIApplicationDelegate) {

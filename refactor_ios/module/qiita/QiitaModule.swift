@@ -9,10 +9,14 @@
 import UIKit
 import SwiftTask
 
+
+var qiitaApi: QiitaApi!
+
+
 class QiitaModule : Module{
     func onLoad() {
-        let api = QiitaApiImpl(baseUrl: "https://qiita.com")
-        api.getLatestItems().success {itemList in
+        qiitaApi = QiitaApiImpl(baseUrl: "https://qiita.com")
+        qiitaApi.getLatestItems().success {itemList in
             println(itemList)
         }
         

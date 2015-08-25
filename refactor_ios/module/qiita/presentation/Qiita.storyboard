@@ -170,7 +170,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="XFU-oQ-jxY">
             <objects>
-                <viewController id="Eea-hO-qd3" customClass="ItemDetailViewController" customModule="refactor_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetail" id="Eea-hO-qd3" customClass="ItemDetailViewController" customModule="refactor_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MTb-PP-qgb"/>
                         <viewControllerLayoutGuide type="bottom" id="soZ-Sj-MYm"/>
@@ -180,17 +180,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zd3-OO-ge7">
-                                <rect key="frame" x="17" y="69" width="341" height="593"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="soZ-Sj-MYm" firstAttribute="top" secondItem="Zd3-OO-ge7" secondAttribute="bottom" constant="5" id="9J5-3V-1aE"/>
-                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="leading" secondItem="4bv-W3-xDb" secondAttribute="leadingMargin" constant="1" id="UtM-cp-Vcq"/>
-                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="top" secondItem="MTb-PP-qgb" secondAttribute="bottom" constant="5" id="hOg-FT-5Og"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zd3-OO-ge7" secondAttribute="trailing" constant="1" id="veK-vl-Pyd"/>
+                            <constraint firstAttribute="trailing" secondItem="Zd3-OO-ge7" secondAttribute="trailing" id="EDi-6V-hod"/>
+                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="leading" secondItem="4bv-W3-xDb" secondAttribute="leading" id="Tjb-3B-FS8"/>
+                            <constraint firstItem="soZ-Sj-MYm" firstAttribute="top" secondItem="Zd3-OO-ge7" secondAttribute="bottom" id="dqD-zL-K7y"/>
+                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="top" secondItem="MTb-PP-qgb" secondAttribute="bottom" id="fhv-O5-ob6"/>
+                            <constraint firstItem="Zd3-OO-ge7" firstAttribute="top" secondItem="4bv-W3-xDb" secondAttribute="top" constant="83" id="nQ7-TG-o28"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nQ7-TG-o28"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

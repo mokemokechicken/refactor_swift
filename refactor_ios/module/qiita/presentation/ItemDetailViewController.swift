@@ -11,4 +11,13 @@ import UIKit
 class ItemDetailViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
+    
+    var itemUrl: String!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let url = NSURL(string: itemUrl) {
+            webView.loadRequest(NSURLRequest(URL: url))
+        }
+    }
 }

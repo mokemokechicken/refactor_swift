@@ -9,7 +9,7 @@
 import UIKit
 
 
-class QiitaItemListViewDataSource: NSObject, UITableViewDataSource {
+class QiitaItemListViewAdapter: NSObject, UITableViewDataSource {
     
     private var data: [QiitaItem]
     private weak var tableView: UITableView?
@@ -39,6 +39,13 @@ class QiitaItemListViewDataSource: NSObject, UITableViewDataSource {
             cell.setNeedsLayout()
         }
         return cell
+    }
+    
+    func get(index: Int) -> QiitaItem? {
+        if (0 <= index && index < data.count) {
+            return data[index]
+        }
+        return nil
     }
     
 }

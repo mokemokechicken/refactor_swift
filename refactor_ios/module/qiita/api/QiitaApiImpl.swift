@@ -20,12 +20,12 @@ class QiitaApiImpl : QiitaApi {
     
     func getLatestItems() -> Task<Float, [QiitaItem], NSError> {
         let request = Alamofire.request(.GET, "\(baseUrl)/api/v2/items")
-        return request.toEntityListTask()
+        return request.toEntityListTask()  // Return の型 [QiitaItem] によって実行される処理が選択されている
     }
     
     func getItemsByTag(tag: String) -> Task<Float, [QiitaItem], NSError> {
         let request = Alamofire.request(.GET, "\(baseUrl)/api/v2/tags/ios/items")
-        return request.toEntityListTask()
+        return request.toEntityListTask()  // Return の型 [QiitaItem] によって実行される処理が選択されている
     }
 
 }

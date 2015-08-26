@@ -15,11 +15,7 @@ var qiitaApi: QiitaApi!
 
 class QiitaModule : Module{
     func onLoad() {
-        qiitaApi = QiitaApiImpl(baseUrl: "https://qiita.com")
-        qiitaApi.getLatestItems().success {itemList in
-            println(itemList)
-        }
-        
+        modelContainer.setModel(LatestItemListModel(), forKey: LATEST_ITEM_LIST_MODEL)
     }
  
     func firstViewController() -> UIViewController? {

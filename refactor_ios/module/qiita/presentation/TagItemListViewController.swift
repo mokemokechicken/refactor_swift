@@ -12,7 +12,6 @@ class TagItemListViewController: UIViewController,UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     private var tableViewAdapter: QiitaItemListViewAdapter!
-    private var model: LatestItemListModel! = modelContainer.get(LATEST_ITEM_LIST_MODEL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +20,8 @@ class TagItemListViewController: UIViewController,UITableViewDelegate {
         tableView.dataSource = tableViewAdapter
         tableView.delegate = self
         
-        let api = QiitaApiImpl(baseUrl: "https://qiita.com")
-        // この場合 unowned だとCrashする。
-        api.getItemsByTag("iOS").success { [unowned self] itemList in
+        // この場合 unowned だとCrashする。(例としてわざとそうしています)
+        qiitaApi.getItemsByTag("iOS").success { [unowned self] itemList in
             self.tableViewAdapter.replaceData(itemList)
         }
     }

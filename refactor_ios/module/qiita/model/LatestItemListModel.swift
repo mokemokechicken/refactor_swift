@@ -7,17 +7,31 @@
 //
 
 import Foundation
+import EventCenter
 
 let LATEST_ITEM_LIST_MODEL = "LATEST_ITEM_LIST_MODEL"
 
 
 class LatestItemListModel {
+    class UpdateEvent {}
     
+    let eventCenter: EventCenter
+    private(set) var items: [QiitaItem] = []
+    
+    init(eventCenter: EventCenter) {
+        self.eventCenter = eventCenter
+    }
+    
+    func update() {
+        qiitaApi.getLatestItems().success { itemList -> Void in
+            self.items = itemList
+            self.eventCenter.post(UpdateEvent())
+        }
+    }
     
 }
 
 
-protocol Observable<T: AnyObject> {
-    func addObserver(observer: T)
-    
-}
+
+
+

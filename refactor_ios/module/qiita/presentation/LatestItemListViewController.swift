@@ -14,19 +14,37 @@ class LatestItemListViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     private var tableViewAdapter: QiitaItemListViewAdapter!
+    private var model: LatestItemListModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.model = modelContainer.get(LATEST_ITEM_LIST_MODEL)
         
         tableViewAdapter = QiitaItemListViewAdapter(data: [], tableView: tableView)
         tableView.dataSource = tableViewAdapter
         tableView.delegate = self
 
-        let api = QiitaApiImpl(baseUrl: "https://qiita.com")
-        // この場合 unowned だとCrashする。
-        api.getLatestItems().success { [unowned self] itemList in
-            self.tableViewAdapter.replaceData(itemList)
-        }
+        self.model.update()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateView()
+        self.model.eventCenter.register(self, handler: onUpdate)
+    }
+    
+    func onUpdate(event: LatestItemListModel.UpdateEvent) {
+        self.updateView()
+    }
+    
+    func updateView() {
+        self.tableViewAdapter.replaceData(self.model.items)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.model.eventCenter.unregister(self)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

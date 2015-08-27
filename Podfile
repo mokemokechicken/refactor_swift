@@ -7,6 +7,7 @@ target 'refactor_ios' do
   pod 'ImageLoader', '~> 0.3.4'
   pod 'Argo', '~> 1.0.4'
   pod 'SwiftTask', '~> 3.3.1'
+  pod 'EventCenter'
 end
 
 target 'refactor_iosTests' do

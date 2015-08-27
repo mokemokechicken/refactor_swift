@@ -9,7 +9,7 @@
 public let modelContainer = ModelContainer()
 
 public class ModelContainer {
-    private var container = [String: AnyObject]()
+    private var container = [String: Any]()
     
     public func get<T: AnyObject>(modelKey: String) -> T? {
         return container[modelKey] as? T

@@ -4,6 +4,7 @@ PODS:
     - Box (~> 1.2)
     - Runes (>= 1.2.2)
   - Box (1.2.2)
+  - EventCenter (1.0.0)
   - ImageLoader (0.3.4)
   - Runes (2.0.0)
   - SwiftTask (3.3.1)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 1.3)
   - Argo (~> 1.0.4)
+  - EventCenter
   - ImageLoader (~> 0.3.4)
   - SwiftTask (~> 3.3.1)
 
@@ -18,6 +20,7 @@ SPEC CHECKSUMS:
   Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
   Argo: 75f6921e52a65b9a98be0ba635c2f47e4f2cf08e
   Box: a92e8aa4c099e6bc0733829665caf9e668ef53b8
+  EventCenter: 057f90f1ce1627204467cd7c52574615343e4773
   ImageLoader: 68969ed4a42772e86a2c6449a40f6442d34d86d2
   Runes: 4fe81355f4620b76b02176222d264b33e60dba51
   SwiftTask: 0baec4571e2ea235e73817c399cde12056c81f6f
